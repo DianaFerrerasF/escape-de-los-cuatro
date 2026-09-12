@@ -1,0 +1,6 @@
+   # Godot 4+ specific ignores
+   .godot/
+
+   # Archivos de sistema operativo
+   Thumbs.db
+   Desktop.ini
