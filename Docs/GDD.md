@@ -51,15 +51,39 @@ captura), y simplifica su IA (no necesita visión ni conos de detección).
 
 Rescate sin límite de tiempo: el niño capturado espera indefinidamente
 hasta que otro niño lo rescate. El riesgo no viene de un reloj, sino de que
-moverte para rescatarlo también genera ruido y sube tu propia prioridad.
-Desventaja post-rescate: aún sin definir.
+moverte para rescatarlo también genera ruido y sube tu propia prioridad, y
+de que la acción de liberarlo (mantener presionado, ver D11) te deja
+inmóvil y expuesta unos segundos. Sin desventaja mecánica posterior (D08)
+— ese riesgo durante el rescate ya es la consecuencia.
+
+## Alcance del MVP (D05)
+
+Un solo nivel, pensado para sentirse como una experiencia completa de
+~10-15 minutos (no infinita). Escenario: una casa/torre donde los 4 niños
+fueron llevados (secuestro), empezando en el subterráneo. La piscina de
+pelotas —su zona segura y objetivo— está arriba de todo: la progresión
+física (subir, escapando de lo oscuro) refuerza el tono.
+
+Estructura aproximada: sótano (inicio, los 4 juntos) → 4-6 espacios
+conectados con oportunidades de escondite y persecución, intensidad
+creciente hacia el final → cuarto de la piscina de pelotas (final).
+
+## Narrativa (MVP)
+
+- Premisa: los 4 niños fueron secuestrados; el motor emocional es querer
+  volver a casa.
+- La naturaleza del monstruo (criatura literal o una persona) queda
+  deliberadamente ambigua — decisión de estilo, no un pendiente a resolver.
+- Objetos ambientales por el mapa insinúan que no son los primeros en pasar
+  por esto (sin necesidad de sistemas nuevos — solo diseño de nivel/arte).
+- Personalidad de cada niño (D13): vive solo en la capa narrativa
+  (apariencia, animaciones idle, gestos o líneas propias), nunca en
+  habilidades de juego distintas.
 
 ## Decisiones pendientes críticas
 
-- Desventaja del niño rescatado (aún sin definir).
-- Si se adopta la mecánica de "llamado" (ver `backlog.md` B02).
-- Alcance exacto del MVP (nivel único, cuántos estados de IA).
-- Si existirá modo cooperativo local como alternativa/expansión.
+Ninguna crítica pendiente por ahora — todas las de la lista original de la
+Fase 0 están cerradas. Ideas post-MVP quedan en `backlog.md`.
 
 Ver `decisions.md` para el registro formal y `backlog.md` para ideas sueltas
 que aún no se evalúan.

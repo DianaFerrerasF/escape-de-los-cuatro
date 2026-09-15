@@ -11,3 +11,4 @@ evaluadas formalmente.
 | B04 | Modo donde el monstruo es controlado por una persona (jugador), con ciertas ventajas | Discusión de diseño post-D11 | Nueva propuesta — post-MVP, sin evaluar |
 | B05 | Sistema de estrellas según el desempeño en el nivel | Discusión de diseño post-D11 | Nueva propuesta — post-MVP, sin evaluar |
 | B06 | Aleatorizar entre variantes del mini-juego de rescate (mantener presionado / presionar repetidamente / combinación) para reducir repetitividad | Discusión de diseño, D11 | Propuesta de pulido — considerar después del MVP, no ahora |
+| B07 | "Ayudantes del monstruo" — aliados o presencias adicionales que dificulten el escape | Discusión de diseño, cierre de D05 | Nueva propuesta — explícitamente post-MVP, sin evaluar (marcada por la propia autora) |
