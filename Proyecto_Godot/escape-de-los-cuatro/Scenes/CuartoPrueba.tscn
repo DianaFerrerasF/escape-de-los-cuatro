@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://mn1t13geaq33"]
+
+[ext_resource type="PackedScene" uid="uid://dfiv07elplc77" path="res://Scenes/Nino_1.tscn" id="1_nsnco"]
+[ext_resource type="PackedScene" uid="uid://dok0cvkpkwvh2" path="res://Scenes/Monstruo.tscn" id="2_m7q5k"]
+[ext_resource type="Script" uid="uid://bcwnbet3clkce" path="res://Scripts/zona_cobertura.gd" id="3_rnrpc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7q5k"]
+size = Vector2(14, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnrpc"]
+size = Vector2(13, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6qav"]
+size = Vector2(1127, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdtj1"]
+size = Vector2(1130, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ej8f"]
+size = Vector2(201, 194)
+
+[node name="CuartoPrueba" type="Node2D" unique_id=371384757]
+
+[node name="Pared_Izquierda" type="StaticBody2D" parent="." unique_id=423287759]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared_Izquierda" unique_id=1985226591]
+position = Vector2(7, 324)
+shape = SubResource("RectangleShape2D_m7q5k")
+
+[node name="Pared_Derecha" type="StaticBody2D" parent="." unique_id=2133996368]
+position = Vector2(1134, 10)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared_Derecha" unique_id=2986810]
+position = Vector2(15.5, 314)
+shape = SubResource("RectangleShape2D_rnrpc")
+debug_color = Color(0.94372493, 9.337366e-06, 0.6025717, 0.41960785)
+
+[node name="Pared_Arriba" type="StaticBody2D" parent="." unique_id=501458941]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared_Arriba" unique_id=1396468138]
+position = Vector2(577.5, 5)
+shape = SubResource("RectangleShape2D_c6qav")
+debug_color = Color(0, 0.64472604, 0.2813432, 0.41960785)
+
+[node name="Pared_Abajo" type="StaticBody2D" parent="." unique_id=1688067274]
+position = Vector2(6, 638)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared_Abajo" unique_id=862943387]
+position = Vector2(575, 5.5)
+shape = SubResource("RectangleShape2D_xdtj1")
+debug_color = Color(0.68514496, 0.5013148, 0, 0.41960785)
+
+[node name="Nino1" parent="." unique_id=314769030 instance=ExtResource("1_nsnco")]
+position = Vector2(557, 319)
+
+[node name="Monstruo" parent="." unique_id=529289339 instance=ExtResource("2_m7q5k")]
+position = Vector2(111, 96)
+
+[node name="ZonaCobertura" type="Area2D" parent="." unique_id=822849814]
+position = Vector2(1031, 548)
+script = ExtResource("3_rnrpc")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaCobertura" unique_id=576271293]
+position = Vector2(-0.5, -18)
+shape = SubResource("RectangleShape2D_5ej8f")
+debug_color = Color(0.63498867, 0.5277455, 1.1551381e-06, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="ZonaCobertura" unique_id=1740414762]
+offset_left = -99.0
+offset_top = -70.0
+offset_right = 91.0
+offset_bottom = 58.0
+color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+
+[connection signal="body_entered" from="ZonaCobertura" to="ZonaCobertura" method="_on_body_entered"]
+[connection signal="body_exited" from="ZonaCobertura" to="ZonaCobertura" method="_on_body_exited"]

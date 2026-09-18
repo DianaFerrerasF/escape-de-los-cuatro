@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dok0cvkpkwvh2"]
+
+[ext_resource type="Script" uid="uid://b0paeeor8pbdw" path="res://Scripts/monstruo.gd" id="1_0jqyp"]
+[ext_resource type="Texture2D" uid="uid://cfidh42qhahxe" path="res://icon.svg" id="2_nq1ha"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_atqkj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itxd4"]
+radius = 200.0
+
+[node name="Monstruo" type="CharacterBody2D" unique_id=529289339]
+script = ExtResource("1_0jqyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1121672375]
+shape = SubResource("CircleShape2D_atqkj")
+debug_color = Color(0.9978729, 0.042266555, 5.7756904e-07, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1802037425]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("2_nq1ha")
+
+[node name="AreaDeteccion" type="Area2D" parent="." unique_id=611777886]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion" unique_id=587455599]
+shape = SubResource("CircleShape2D_itxd4")
+debug_color = Color(0.04966543, 0.62921053, 0.47537988, 0.41960785)
+
+[connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
+[connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]

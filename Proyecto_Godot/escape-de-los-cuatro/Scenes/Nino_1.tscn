@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dfiv07elplc77"]
+
+[ext_resource type="Script" uid="uid://clouekulrqgrs" path="res://Scripts/nino_1.gd" id="1_n30c1"]
+[ext_resource type="Texture2D" uid="uid://cfidh42qhahxe" path="res://icon.svg" id="1_utsoj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n30c1"]
+radius = 21.0
+height = 42.0
+
+[node name="Nino1" type="CharacterBody2D" unique_id=314769030 groups=["jugador"]]
+script = ExtResource("1_n30c1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1525288274]
+shape = SubResource("CapsuleShape2D_n30c1")
+debug_color = Color(0.96844167, 0.12459447, 0.33196005, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1811988003]
+modulate = Color(0.23032683, 0.10999096, 0.9999998, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_utsoj")
