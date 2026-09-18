@@ -12,7 +12,7 @@ var en_busqueda = false
 var tiempo_busqueda = 0.0
 
 func _physics_process(delta):
-	var detectado_ahora = objetivo != null and not objetivo.esta_cubierto
+	var detectado_ahora = objetivo != null and not objetivo.esta_cubierto and not objetivo.esta_capturado
 
 	if detectado_ahora:
 		var direccion = (objetivo.global_position - global_position).normalized()
@@ -43,9 +43,18 @@ func _moverse_a_ultima_posicion():
 		velocity = Vector2.ZERO
 
 func _on_area_deteccion_body_entered(body):
-	if body.is_in_group("jugador"):
+	if body.is_in_group("jugador") and not body.esta_capturado:
 		objetivo = body
 
 func _on_area_deteccion_body_exited(body):
 	if body == objetivo:
 		objetivo = null
+
+func _on_area_captura_body_entered(body: Node2D) -> void:
+	if body.is_in_group("jugador") and body == objetivo and not body.esta_cubierto:
+		body.set_capturado(true)
+		objetivo = null
+		en_busqueda = false
+
+func _on_area_captura_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

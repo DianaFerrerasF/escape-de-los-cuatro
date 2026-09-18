@@ -8,7 +8,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_itxd4"]
 radius = 200.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jqyp"]
+radius = 50.0
+
 [node name="Monstruo" type="CharacterBody2D" unique_id=529289339]
+collision_layer = 4
 script = ExtResource("1_0jqyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1121672375]
@@ -20,10 +24,20 @@ modulate = Color(0, 0, 0, 1)
 texture = ExtResource("2_nq1ha")
 
 [node name="AreaDeteccion" type="Area2D" parent="." unique_id=611777886]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion" unique_id=587455599]
 shape = SubResource("CircleShape2D_itxd4")
 debug_color = Color(0.04966543, 0.62921053, 0.47537988, 0.41960785)
 
+[node name="AreaCaptura" type="Area2D" parent="." unique_id=2060477393]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaCaptura" unique_id=726058766]
+shape = SubResource("CircleShape2D_0jqyp")
+debug_color = Color(0.7083213, 0, 0.13538417, 0.41960785)
+
 [connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
 [connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]
+[connection signal="body_entered" from="AreaCaptura" to="." method="_on_area_captura_body_entered"]
+[connection signal="body_exited" from="AreaCaptura" to="." method="_on_area_captura_body_exited"]

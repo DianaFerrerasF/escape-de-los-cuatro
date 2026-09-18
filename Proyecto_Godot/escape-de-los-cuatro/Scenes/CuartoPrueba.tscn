@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://mn1t13geaq33"]
 
-[ext_resource type="PackedScene" uid="uid://dfiv07elplc77" path="res://Scenes/Nino_1.tscn" id="1_nsnco"]
+[ext_resource type="PackedScene" uid="uid://dfiv07elplc77" path="res://Scenes/Nino.tscn" id="1_nsnco"]
 [ext_resource type="PackedScene" uid="uid://dok0cvkpkwvh2" path="res://Scenes/Monstruo.tscn" id="2_m7q5k"]
 [ext_resource type="Script" uid="uid://bcwnbet3clkce" path="res://Scripts/zona_cobertura.gd" id="3_rnrpc"]
+[ext_resource type="Script" uid="uid://d1v5w13e0qjcq" path="res://Scripts/grupo_ninos.gd" id="4_c6qav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7q5k"]
 size = Vector2(14, 648)
@@ -54,14 +55,12 @@ position = Vector2(575, 5.5)
 shape = SubResource("RectangleShape2D_xdtj1")
 debug_color = Color(0.68514496, 0.5013148, 0, 0.41960785)
 
-[node name="Nino1" parent="." unique_id=314769030 instance=ExtResource("1_nsnco")]
-position = Vector2(557, 319)
-
 [node name="Monstruo" parent="." unique_id=529289339 instance=ExtResource("2_m7q5k")]
 position = Vector2(111, 96)
 
 [node name="ZonaCobertura" type="Area2D" parent="." unique_id=822849814]
 position = Vector2(1031, 548)
+collision_mask = 2
 script = ExtResource("3_rnrpc")
 metadata/_edit_group_ = true
 
@@ -76,6 +75,21 @@ offset_top = -70.0
 offset_right = 91.0
 offset_bottom = 58.0
 color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+
+[node name="Nino1" parent="." unique_id=314769030 instance=ExtResource("1_nsnco")]
+position = Vector2(557, 319)
+
+[node name="Nino2" parent="." unique_id=567031383 instance=ExtResource("1_nsnco")]
+position = Vector2(471, 559)
+
+[node name="Nino3" parent="." unique_id=1936307432 instance=ExtResource("1_nsnco")]
+position = Vector2(88, 548)
+
+[node name="Nino4" parent="." unique_id=565975350 instance=ExtResource("1_nsnco")]
+position = Vector2(1036, 86)
+
+[node name="Grupo" type="Node2D" parent="." unique_id=1415528493]
+script = ExtResource("4_c6qav")
 
 [connection signal="body_entered" from="ZonaCobertura" to="ZonaCobertura" method="_on_body_entered"]
 [connection signal="body_exited" from="ZonaCobertura" to="ZonaCobertura" method="_on_body_exited"]

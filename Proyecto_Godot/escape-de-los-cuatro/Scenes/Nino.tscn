@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dfiv07elplc77"]
+
+[ext_resource type="Script" uid="uid://clouekulrqgrs" path="res://Scripts/nino.gd" id="1_n30c1"]
+[ext_resource type="Texture2D" uid="uid://cfidh42qhahxe" path="res://icon.svg" id="1_utsoj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n30c1"]
+radius = 21.0
+height = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n30c1"]
+radius = 50.0
+
+[node name="Nino1" type="CharacterBody2D" unique_id=314769030 groups=["jugador"]]
+collision_layer = 2
+script = ExtResource("1_n30c1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1525288274]
+shape = SubResource("CapsuleShape2D_n30c1")
+debug_color = Color(0.96844167, 0.12459447, 0.33196005, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1811988003]
+modulate = Color(0.23032683, 0.10999096, 0.9999998, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_utsoj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1485718052]
+enabled = false
+
+[node name="AreaRescate" type="Area2D" parent="." unique_id=1455991040]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRescate" unique_id=2117899856]
+shape = SubResource("CircleShape2D_n30c1")
+debug_color = Color(0, 0.6, 0, 0.41960785)
+
+[connection signal="body_entered" from="AreaRescate" to="." method="_on_area_rescate_body_entered"]
+[connection signal="body_exited" from="AreaRescate" to="." method="_on_area_rescate_body_exited"]
